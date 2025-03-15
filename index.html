@@ -3,25 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website with Image and JS</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="script.js" defer></script>
+    <title>Document</title>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Welcome to My Website</h1>
-        </header>
+    <label for="html">Fname</label>
+    <input type="text" id="fname" name="fname" >
+   <button id="btnsubmit">Submit</button>
+   
 
-        <section class="image-section">
-            <img id="mainImage" src="https://via.placeholder.com/500" alt="Placeholder Image" class="main-image">
-        </section>
 
-        <button id="changeImageBtn">Change Image</button>
+    <script>
+let fname = document.getElementById("fname")
+let btnsubmit = document.getElementById("btnsubmit")
+ const regex = /^[a-zA-Z0-9_]{3,20}$/
+ btnsubmit.addEventListener("blur",()=>{
+    console.log(fname.value)
+    let results= regex.test(fname.value)
+    if (results) {
+        alert("true")
+        
+    }
+    else{
+        alert("false")
 
-        <footer>
-            <p>© 2025 My Website</p>
-        </footer>
-    </div>
+    }
+ })
+
+    </script>
 </body>
 </html>
